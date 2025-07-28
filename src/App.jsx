@@ -1,11 +1,11 @@
 import './App.css'
-import VideoAnnotationApp from './components/VideoAnnotationApp'
+import VideoAnnotationApp from './components/VideoAnnotationApp';
+
 
 function App() {
-
   return (
     <>
-      <VideoAnnotationApp />
+    <VideoAnnotationApp />
     </>
   )
 }
