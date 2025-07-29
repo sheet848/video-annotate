@@ -36,39 +36,14 @@ const VideoSourceSelector = () => {
 
   return (
     <>
-    <div style={{
-      background: 'rgba(255, 255, 255, 0.1)',
-      backdropFilter: 'blur(20px)',
-      borderRadius: '24px',
-      padding: '40px',
-      marginBottom: '30px',
-      border: '1px solid rgba(255, 255, 255, 0.2)',
-      textAlign: 'center'
-    }}>
-      <h2 style={{
-        color: 'white',
-        marginBottom: '30px',
-        fontSize: '24px',
-        fontWeight: '500'
-      }}>
+    <div className="video-source">
+      <h2>
         Choose Your Video Source
       </h2>
       
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '20px',
-        marginBottom: '30px'
-      }}>
+      <div className="dual-grid">
         {/* YouTube Input */}
-        <div style={{
-          background: 'rgba(255, 255, 255, 0.1)',
-          borderRadius: '16px',
-          padding: '30px',
-          border: '1px solid rgba(255, 255, 255, 0.2)',
-          transition: 'all 0.3s ease',
-          cursor: 'pointer'
-        }}
+        <div className="youtube-col"
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = 'translateY(-5px)';
           e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
@@ -78,37 +53,19 @@ const VideoSourceSelector = () => {
           e.currentTarget.style.boxShadow = 'none';
         }}>
           <Youtube size={48} color="white" style={{ marginBottom: '20px' }} />
-          <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '18px' }}>YouTube Video</h3>
+          <h3>YouTube Video</h3>
           <input
             type="text"
             placeholder="Paste YouTube URL here..."
             value={youtubeUrl}
             onChange={(e) => dispatch(setYoutubeUrl(e.target.value))}
-            style={{
-              width: '100%',
-              padding: '12px 16px',
-              borderRadius: '12px',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              background: 'rgba(255, 255, 255, 0.1)',
-              color: 'white',
-              fontSize: '14px',
-              marginBottom: '15px',
-              outline: 'none'
-            }}
           />
           <button
             onClick={handleYouTubeLoad}
             disabled={!youtubeUrl}
             style={{
               background: youtubeUrl ? 'linear-gradient(135deg, #ff6b6b, #ee5a24)' : 'rgba(255, 255, 255, 0.2)',
-              color: 'white',
-              border: 'none',
-              padding: '12px 24px',
-              borderRadius: '12px',
               cursor: youtubeUrl ? 'pointer' : 'not-allowed',
-              fontSize: '14px',
-              fontWeight: '500',
-              transition: 'all 0.3s ease'
             }}
           >
             Load Video
